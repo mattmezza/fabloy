@@ -15,6 +15,6 @@ env.user = '$2'
 
 def deploy_php():
     with cd('$3'):
-        run("git pull")
-        run("composer install")
+        run('git pull')
+        run('composer install')
 "
