@@ -17,4 +17,15 @@ def deploy_php():
     with cd('$3'):
         run('git pull')
         run('composer install')
+
+def deploy_yarn():
+    with cd('$3'):
+        run('git pull')
+        run('yarn install')
+
+def deploy_yarn_build():
+    with cd('$3'):
+        run('git pull')
+        run('yarn install')
+        run('yarn build')
 "
