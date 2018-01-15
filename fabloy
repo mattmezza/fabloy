@@ -1,0 +1,20 @@
+#!/bin/sh -e
+# Usage: 
+#
+# $ fabloy "host" "ssh_user" "ssh_root" > fabfile.py
+#
+#!/bin/sh
+echo "import os
+from fabric.api import *
+
+env.hosts = [
+    '$1'
+]
+
+env.user = '$2'
+
+def deploy_php():
+    with cd('$3'):
+        run("git pull")
+        run("composer install")
+"
